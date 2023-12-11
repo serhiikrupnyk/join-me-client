@@ -1,9 +1,7 @@
 <template>
-  <div id="app">
     <component :is="layout">
       <RouterView />
     </component>
-  </div>
 </template>
 
 <style lang="scss">

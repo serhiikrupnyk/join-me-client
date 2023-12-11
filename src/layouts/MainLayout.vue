@@ -1,19 +1,26 @@
 <template>
-    <v-layout class="rounded rounded-md">
-      <v-app-bar title="Application bar"></v-app-bar>
-  
-      <v-navigation-drawer>
-        <v-list>
-          <v-list-item title="Navigation drawer"></v-list-item>
-        </v-list>
-      </v-navigation-drawer>
-  
-      <v-main class="d-flex align-center justify-center" style="min-height: 300px;">
-        <RouterView />
-      </v-main>
+    <PreLoader :loading="loading" />
+    <v-layout v-if="!loading" class="rounded rounded-md">
+        <AppBar />
+        <NavBar />
+        <v-main class="d-flex align-center justify-center" style="min-height: 300px;">
+            <RouterView />
+        </v-main>
     </v-layout>
-  </template>
+</template>
 
-  <script setup lang="ts">
-  import { RouterView } from 'vue-router'
-  </script>
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
+import NavBar from '@/components/app/NavBar.vue'
+import AppBar from '@/components/app/AppBar.vue'
+import PreLoader from '@/components/app/PreLoader.vue'
+
+
+</script>
+
+<script lang="ts">
+export default {
+    data: () => ({
+        loading: false,
+    }),
+}</script>
