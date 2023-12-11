@@ -7,3 +7,9 @@
     My Vue.js app!
   </main>
 </template>
+
+<script>
+  export default {
+  layout: 'main', // Указываем, какой лейаут использовать
+}
+</script>
